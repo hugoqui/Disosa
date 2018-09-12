@@ -5,13 +5,13 @@
     <title>@ViewData["Title"] - Disosa</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/site.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 <body>
-    @RenderBody()
+    
 
     <nav class="" id="navbar">
         <div class="nav-wrapper">
@@ -36,7 +36,9 @@
         <li><a href="mobile.html">Mobile</a></li>
     </ul>
 
-
+    <div class="">
+        @RenderBody()
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

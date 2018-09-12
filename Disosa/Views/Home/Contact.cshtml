@@ -1,17 +1,81 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div id="carrusel">
+    <div style="background:url(../images/slider1.jpg)" id="imagen1" class="carrusel-image">
+        <h3 class="carrusel-titulo rojo">
+            NUEVO SPOT Y HOY, <br />
+            ¿TE HAS DIVERTIDO?
+            <p class="carrusel-texto">
+                Valores fundamentales en Fini 
+                gracias a los cuales contuamos creciendo y 
+                manteniendonos líderes en nuestro sector.
+            </p>
+        </h3>
+        
+
+    </div>
+
+    <div style="background:url(../images/slider2.jpg)" id="imagen2" class="carrusel-image">
+        <h3 class="carrusel-titulo azul">
+            CALIDAD E INNOVACIÓN
+        </h3>
+        <p class="carrusel-texto">
+            Valores fundamentales en Fini <br />
+            gracias a los cuales contuamos creciendo y <br />
+            manteniendonos líderes en nuestro sector.
+        </p>
+    </div>
+
+    <div style="background:url(../images/slider3.jpg)" id="imagen3" class="carrusel-image">
+    </div>
+
+
+
+</div>
+
+<h1 id="titutlo">
+    Bienvenido
+</h1>
+
+<button id="button" onclick="Ocultar()">
+    Ocultar
+</button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+
+    function OcultarImagenes() {
+        $(".carrusel-image").css("display", "none");
+    }
+
+    function MostrarImagen(imagen) {
+        OcultarImagenes();
+        $("#" + imagen).fadeIn("slow");
+    }
+
+    OcultarImagenes();
+
+    var imagenActual = "imagen1";
+    MostrarImagen(imagenActual);
+    setInterval(function () {
+        if (imagenActual == "imagen1") {
+            imagenActual = "imagen2";
+        } else if (imagenActual == "imagen2") {
+            imagenActual = "imagen3";
+        } else if (imagenActual == "imagen3") {
+            imagenActual = "imagen1"
+        }
+        MostrarImagen(imagenActual);
+    },
+        5000
+    );
+
+
+
+
+</script>
