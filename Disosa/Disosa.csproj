@@ -30,6 +30,11 @@
     <Content Remove="wwwroot\images\productos\cafe.jpg" />
     <Content Remove="wwwroot\images\productos\huella.jpg" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\disosa - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\disosagt.com - Web Deploy.pubxml" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\images\slider3.jpg" />
     <None Include="wwwroot\images\slider2.jpg" />
