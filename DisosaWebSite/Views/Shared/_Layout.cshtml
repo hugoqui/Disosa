@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Disosa</title>
+    <link href="~/Content/images/favicon.png" rel="shortcut icon" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Content/materialize.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="" id="navbar">
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#!" class="brand-logo"> <img width="200" style="margin:5px" src="~/Content/images/logo-disosa.png"> </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="cursor: pointer "><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="homeMenu"><a href="@Url.Action("Index","Home")">Inicio</a></li>
+                    <li class="aboutMenu"><a href="@Url.Action("Index","About")">Quienes Somos</a></li>
+                    <li class="productsMenu"><a href="#">Productos</a></li>
+                    <li class="contactMenu"><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Sass</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Javascript</a></li>
+        <li><a href="#">Mobile</a></li>
+    </ul>
+
+
+    <div>
+        @RenderBody()
+
+        <footer>
+            <div class=container>
+                <div class="row">
+                    <div class="col s6 m4">
+                        <strong> Grupo Disosa</strong>
+                        <ul>
+                            <li>Carretera Interamericana <br /> San Miguel El Tejar</li>
+                            <li>Chimaltenango, Guatemala</li>
+                        </ul>
+                    </div>
+                    <div class="col s6 m4">
+                        <strong>Contacto</strong>
+                        <ul>
+                            <li>
+                                <i class="material-icons">email</i>
+                                <a href="mailto:gerencia@disosagt.com"> gerencia@disosagt.com</a>
+                            </li>
+                            <li>
+                                <i class="material-icons">phone</i>
+                                <a href="#"> 7838-1839 </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col s6 m4">
+                        <strong>Distribuidora Horizontal</strong>
+                        <ul>
+                            <li>
+                                <a href="productos"> Productos</a>
+                            </li>
+                            <li>
+                                <a href="promosiones"> Promociones </a>
+                            </li>
+                            <li>
+                                <a href="promosiones"> Contáctanos </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    @* Script Section *@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/materialize.js"></script>
+    <script src="~/Scripts/app/site.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+</html>

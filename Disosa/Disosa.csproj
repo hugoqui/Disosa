@@ -34,6 +34,8 @@
   <ItemGroup>
     <None Remove="Properties\PublishProfiles\disosa - Web Deploy.pubxml" />
     <None Remove="Properties\PublishProfiles\disosagt.com - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\home.disosagt.com - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\homedisosa.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\images\slider3.jpg" />
@@ -53,6 +55,7 @@
     <None Include="wwwroot\images\productos\huella.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\images\productos\" />
   </ItemGroup>
 </Project>
