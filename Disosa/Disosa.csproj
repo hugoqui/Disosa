@@ -12,4 +12,42 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\images\slider3.jpg" />
+    <Content Remove="wwwroot\images\slider2.jpg" />
+    <Content Remove="wwwroot\images\slider1.jpg" />
+    <Content Remove="wwwroot\images\banner1.svg" />
+    <Content Remove="wwwroot\js\materialize.js" />
+    <Content Remove="wwwroot\css\materialize.css" />
+    <Content Remove="wwwroot\images\logo-disosa.png" />
+    <Content Remove="wwwroot\images\logo-disosa-blanco.png" />
+    <Content Remove="wwwroot\images\mapa.png" />
+    <Content Remove="wwwroot\images\visitas.png" />
+    <Content Remove="wwwroot\images\diario.png" />
+    <Content Remove="wwwroot\images\mensual.png" />
+    <Content Remove="wwwroot\images\productos\perrito.jpg" />
+    <Content Remove="wwwroot\images\productos\mario.jpg" />
+    <Content Remove="wwwroot\images\productos\cafe.jpg" />
+    <Content Remove="wwwroot\images\productos\huella.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\slider3.jpg" />
+    <None Include="wwwroot\images\slider2.jpg" />
+    <None Include="wwwroot\images\slider1.jpg" />
+    <None Include="wwwroot\js\materialize.js" />
+    <None Include="wwwroot\css\materialize.css" />
+    <None Include="wwwroot\images\logo-disosa.png" />
+    <None Include="wwwroot\images\logo-disosa-blanco.png" />
+    <None Include="wwwroot\images\mapa.png" />
+    <None Include="wwwroot\images\visitas.png" />
+    <None Include="wwwroot\images\diario.png" />
+    <None Include="wwwroot\images\mensual.png" />
+    <None Include="wwwroot\images\productos\perrito.jpg" />
+    <None Include="wwwroot\images\productos\mario.jpg" />
+    <None Include="wwwroot\images\productos\cafe.jpg" />
+    <None Include="wwwroot\images\productos\huella.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\productos\" />
+  </ItemGroup>
 </Project>
