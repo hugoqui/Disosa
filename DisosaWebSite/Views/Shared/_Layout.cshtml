@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="~/Content/materialize.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Site.css?v=@DateTime.UtcNow" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -62,10 +62,10 @@
                 <a href="#!" class="brand-logo"> <img width="300" style="margin:5px" src="~/Content/images/logo-disosa.png"> </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="cursor: pointer "><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="homeMenu"><a href="@Url.Action("Index","Home")" onclick="$('#pacifier').fadeIn()">Inicio</a></li>
-                    <li class="aboutMenu"><a href="@Url.Action("Index","About")" onclick="$('#pacifier').fadeIn()">Quienes Somos</a></li>
-                    <li class="productsMenu"><a href="">Productos</a></li>
-                    <li class="contactMenu"><a href="@Url.Action("Index","Contact")" onclick="$('#pacifier').fadeIn()">Contacto</a></li>
+                    <li class="homeMenu"><a href="@Url.Action("Index")" onclick="$('#pacifier').fadeIn()">Inicio</a></li>
+                    <li class="aboutMenu"><a href="@Url.Action("About")" onclick="$('#pacifier').fadeIn()">Quienes Somos</a></li>
+                    <li class="productsMenu"><a href="@Url.Action("Products")" onclick="$('#pacifier').fadeIn()">Productos</a></li>
+                    <li class="contactMenu"><a href="@Url.Action("Contact")" onclick="$('#pacifier').fadeIn()">Contacto</a></li>
                 </ul>
             </div>
 
@@ -73,10 +73,10 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li class="homeMenu"><a href="@Url.Action("Index","Home")">Inicio</a></li>
-        <li class="aboutMenu"><a href="@Url.Action("Index","About")">Quienes Somos</a></li>
-        <li class="productsMenu"><a href="">Productos</a></li>
-        <li class="contactMenu"><a href="@Url.Action("Index","Contact")">Contacto</a></li>
+        <li class="homeMenu" onclick="$('#pacifier').fadeIn()"><a href="@Url.Action("Index")">Inicio</a></li>
+        <li class="aboutMenu" onclick="$('#pacifier').fadeIn()"><a href="@Url.Action("About")">Quienes Somos</a></li>
+        <li class="productsMenu" onclick="$('#pacifier').fadeIn()"><a href="@Url.Action("Products")">Productos</a></li>
+        <li class="contactMenu" onclick="$('#pacifier').fadeIn()"><a href="@Url.Action("Contact")">Contacto</a></li>
     </ul>
 
 
@@ -132,7 +132,7 @@
     @* Script Section *@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/materialize.js"></script>
-    <script src="~/Scripts/app/site.js"></script>
+    <script src="~/Scripts/app/site.js?v=@DateTime.UtcNow"></script>
 
     <script>
 
@@ -145,12 +145,14 @@
 
             setTimeout(autoplay, 4500);
             function autoplay() {
-                $('.carousel').carousel('next');
+                $('#carrusel').carousel('next');
                 setTimeout(autoplay, 4500);
             }
         });
 
-
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
     </script>
 
     <!-- Smartsupp Live Chat script -->

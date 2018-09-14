@@ -19,12 +19,11 @@
     z-index: 1;
 }
 
-    #carrusel h2 {
-        margin-top: 150px;
-        text-align: left;
-        margin-left: 15%;
-        font-weight: bold;
-    }
+.caption h2 {
+    margin-top: 100px;
+    text-align: left;   
+    font-weight: bold;
+}
 
     #carrusel p {
         text-align: left;
@@ -33,11 +32,12 @@
 
 .carrusel-texto {
     font-size: 14px;
-    color: #382323;
+    color: #382323 !important;
     line-height: 15px;
     width: 350px;
     max-width: 80%;
     text-align: justify;
+    font-weight:bold;
 }
 
 main {
@@ -73,6 +73,9 @@ footer {
 
 .producto {
     text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 25px !important;
 }
 
 .hideme {

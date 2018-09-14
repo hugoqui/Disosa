@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<DisosaWebSite.Models.Producto>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<main class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col s12 m3">
+                <div class="card center-align">
+                    <span class="card-title " style="font-size:12px; font-weight:bold">@item.Codigo</span>
+                    <div class="card-image">
+                        <img src="~/Content/images/productos/cafe.jpg" />
+                        <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <i class="material-icons modal-trigger" href="#@item.Codigo">add</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            @item.Nombre
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="@item.Codigo" class="modal center-align" style="max-height:100%">
+                <div class="modal-content">
+                    <h4 class="rojo"><small>@item.Codigo</small> - @item.Nombre</h4>                    
+                    <img src="~/Content/images/productos/cafe.jpg" class="responsive-img" alt="@item.Nombre"/>
+                </div>
+                @*<div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>*@
+            </div>
+        }
+    </div>
+</main>
+
+<div class="center-align">
+    @Html.PagedListPager(Model, page => Url.Action("Products",
+                                new { page }))
+</div>
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    $("#pacifier").fadeOut("slow");
+    $(document).ready(function () {
+        $('.modal').modal();
+    });
+
+</script>

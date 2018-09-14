@@ -1,39 +1,84 @@
-﻿<div class="carousel carousel-slider center" id="carrusel">
-    <div class="carousel-fixed-item center">
-        <a href="@Url.Action("Index","Contact")" class="btn blue darken-2 waves-effect waves-light">
-            CONTÁCTANOS
-            <i class="material-icons right">language</i>
-        </a>
-        
-    </div>
-    <div class="carousel-item" 
-         style="background:url(../Content/images/slider1.jpg); background-position-x: center" href="#one!">
-        <h2 class="rojo">¡DULZURA Y FELICIDAD!</h2>
-        <p class="carrusel-texto">
-            Valores fundamentales en Disosa
-            gracias a los cuales contuamos creciendo y
-            manteniendonos líderes en nuestro sector.
-        </p>
-    </div>
-    <div class="carousel-item" 
-         style="background:url(../Content/images/slider2.jpg); background-position-x: center" href="#two!">
-        <h2 class="azul">CALIDAD E INNOVACIÓN</h2>
-        <p class="carrusel-texto">
-            Valores fundamentales en Disosa
-            gracias a los cuales contuamos creciendo y
-            manteniendonos líderes en nuestro sector.
-        </p>
-    </div>
-    <div class="carousel-item"
-         style="background:url(../Content/images/slider3.jpg); background-position-x: center" href="#three!">
-        <h2 class="azul">
-            CERCA <br />
-            DE TODOS
-        </h2>
-        <p class="carrusel-texto">
-            Nuestros productos se comercializan
-            en el interior de toda la república.
-        </p>
-    </div>    
+﻿@*<div class="carousel carousel-slider center" id="carrusel">
+        <div class="carousel-fixed-item center">
+            <a href="@Url.Action("Contact","Home")" class="btn blue darken-2 waves-effect waves-light">
+                CONTÁCTANOS
+                <i class="material-icons right">language</i>
+            </a>
+
+        </div>
+        <div class="carousel-item"
+             style="background:url(../Content/images/slider1.jpg); background-position-x: center" href="#one!">
+            <h2 class="rojo">¡DULZURA Y FELICIDAD!</h2>
+            <p class="caption carrusel-texto">
+                Valores fundamentales en Disosa
+                gracias a los cuales contuamos creciendo y
+                manteniendonos líderes en nuestro sector.
+            </p>
+        </div>
+        <div class="carousel-item"
+             style="background:url(../Content/images/slider2.jpg); background-position-x: center" href="#two!">
+            <h2 class="azul">CALIDAD E INNOVACIÓN</h2>
+            <p class="carrusel-texto">
+                Valores fundamentales en Disosa
+                gracias a los cuales contuamos creciendo y
+                manteniendonos líderes en nuestro sector.
+            </p>
+        </div>
+        <div class="carousel-item"
+             style="background:url(../Content/images/slider3.jpg); background-position-x: center" href="#three!">
+            <h2 class="azul">
+                CERCA <br />
+                DE TODOS
+            </h2>
+            <p class="carrusel-texto">
+                Nuestros productos se comercializan
+                en el interior de toda la república.
+            </p>
+        </div>
+    </div>*@
+
+<div class="slider">
+    <ul class="slides">
+        <li>
+            <img src="../Content/images/slider1.jpg"> <!-- random image -->
+            <div class="caption left-align">
+                <h3 class="rojo">¡DULZURA Y FELICIDAD!</h3>
+                <p class="carrusel-texto">
+                    Valores fundamentales en Disosa
+                    gracias a los cuales contuamos creciendo y
+                    manteniendonos líderes en nuestro sector.
+                </p>
+            </div>
+        </li>
+        <li>
+            <img src="../Content/images/slider2.jpg"> <!-- random image -->
+            <div class="caption left-align">
+                <h3 class="azul">CALIDAD E INNOVACIÓN</h3>
+                <p class="carrusel-texto">
+                    Valores fundamentales en Disosa
+                    gracias a los cuales contuamos creciendo y
+                    manteniendonos líderes en nuestro sector.
+                </p>
+            </div>
+        </li>
+        <li>
+            <img src="../Content/images/slider3.jpg"> <!-- random image -->
+            <div class="caption left-align">
+                <h2 class="azul">CERCA DE TODOS
+                </h2>
+                <p class="carrusel-texto">
+                    Nuestros productos se comercializan
+                    en el interior de toda la república.
+                </p>
+            </div>
+        </li>        
+    </ul>
 </div>
 
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('.slider').slider();
+    });
+</script>
