@@ -12,16 +12,60 @@
 </head>
 <body>
 
+    <div id="pacifier" class="valign-wrapper">
+        <div class="preloader-wrapper big active" style="left:47%">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="" id="navbar">
         <div class="nav-wrapper">
             <div class="container">
-                <a href="#!" class="brand-logo"> <img width="200" style="margin:5px" src="~/Content/images/logo-disosa.png"> </a>
+                <a href="#!" class="brand-logo"> <img width="300" style="margin:5px" src="~/Content/images/logo-disosa.png"> </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger" style="cursor: pointer "><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="homeMenu"><a href="@Url.Action("Index","Home")">Inicio</a></li>
-                    <li class="aboutMenu"><a href="@Url.Action("Index","About")">Quienes Somos</a></li>
-                    <li class="productsMenu"><a href="#">Productos</a></li>
-                    <li class="contactMenu"><a href="#">Contacto</a></li>
+                    <li class="homeMenu"><a href="@Url.Action("Index","Home")" onclick="$('#pacifier').fadeIn()">Inicio</a></li>
+                    <li class="aboutMenu"><a href="@Url.Action("Index","About")" onclick="$('#pacifier').fadeIn()">Quienes Somos</a></li>
+                    <li class="productsMenu"><a href="">Productos</a></li>
+                    <li class="contactMenu"><a href="@Url.Action("Index","Contact")" onclick="$('#pacifier').fadeIn()">Contacto</a></li>
                 </ul>
             </div>
 
@@ -29,14 +73,16 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Sass</a></li>
-        <li><a href="#">Components</a></li>
-        <li><a href="#">Javascript</a></li>
-        <li><a href="#">Mobile</a></li>
+        <li class="homeMenu"><a href="@Url.Action("Index","Home")">Inicio</a></li>
+        <li class="aboutMenu"><a href="@Url.Action("Index","About")">Quienes Somos</a></li>
+        <li class="productsMenu"><a href="">Productos</a></li>
+        <li class="contactMenu"><a href="@Url.Action("Index","Contact")">Contacto</a></li>
     </ul>
 
 
     <div>
+        @RenderPage("~/Views/Shared/_Carrousel.cshtml")
+
         @RenderBody()
 
         <footer>
@@ -64,7 +110,7 @@
                     </div>
 
                     <div class="col s6 m4">
-                        <strong>Distribuidora Horizontal</strong>
+                        <strong>Distribución  Horizontal</strong>
                         <ul>
                             <li>
                                 <a href="productos"> Productos</a>
@@ -89,9 +135,34 @@
     <script src="~/Scripts/app/site.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.carousel');
+            var instance = M.Carousel.init(elems, {
+                fullWidth: true,
+                indicators: true
+            });
+
+            setTimeout(autoplay, 4500);
+            function autoplay() {
+                $('.carousel').carousel('next');
+                setTimeout(autoplay, 4500);
+            }
         });
+
+
+    </script>
+
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = '8ca07044425d4b226adc0a807e8212bd8915f17f';
+        window.smartsupp || (function (d) {
+            var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
+            s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
+            c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
+        })(document);
     </script>
 </body>
 </html>

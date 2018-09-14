@@ -6,20 +6,10 @@ using System.Web.Mvc;
 
 namespace DisosaWebSite.Controllers
 {
-    public class HomeController : Controller
+    public class ContactController : Controller
     {
-        // GET: Home
+        // GET: Contact
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            return View();
-        }
-
-        public ActionResult Contact()
         {
             return View();
         }
