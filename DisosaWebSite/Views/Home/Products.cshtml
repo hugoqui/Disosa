@@ -11,7 +11,8 @@
                 <div class="card center-align">
                     <span class="card-title " style="font-size:12px; font-weight:bold">@item.Codigo</span>
                     <div class="card-image">
-                        <img src="~/Content/images/productos/cafe.jpg" />
+                        @{ var url = "http://pictures.disosagt.com/productos/" + item.Codigo + ".jpg";}
+                        <img src="@url"  />
                         <a class="btn-floating halfway-fab waves-effect waves-light red">
                             <i class="material-icons modal-trigger" href="#@item.Codigo">add</i>
                         </a>
@@ -27,7 +28,7 @@
             <div id="@item.Codigo" class="modal center-align" style="max-height:100%">
                 <div class="modal-content">
                     <h4 class="rojo"><small>@item.Codigo</small> - @item.Nombre</h4>                    
-                    <img src="~/Content/images/productos/cafe.jpg" class="responsive-img" alt="@item.Nombre"/>
+                    <img src="@url" class="responsive-img" alt="@item.Nombre"/>
                 </div>
                 @*<div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -45,6 +46,9 @@
 
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script>
+    $(".activeMenu").removeClass("activeMenu active");
+    $(".productsMenu").addClass("activeMenu active");
+
     $("#pacifier").fadeOut("slow");
     $(document).ready(function () {
         $('.modal').modal();
