@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<DisosaWebSite.Models.Producto>
+﻿@model PagedList.IPagedList<DisosaWebSite.Models.ProductoCatalogo>
 @using PagedList.Mvc;
 
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
@@ -12,7 +12,7 @@
                     <span class="card-title " style="font-size:12px; font-weight:bold">@item.Codigo</span>
                     <div class="card-image">
                         @{ var url = "http://pictures.disosagt.com/productos/" + item.Codigo + ".jpg";}
-                        <img src="@url"  />
+                        <img src="@url" />
                         <a class="btn-floating halfway-fab waves-effect waves-light red">
                             <i class="material-icons modal-trigger" href="#@item.Codigo">add</i>
                         </a>
@@ -27,12 +27,12 @@
 
             <div id="@item.Codigo" class="modal center-align" style="max-height:100%">
                 <div class="modal-content">
-                    <h4 class="rojo"><small>@item.Codigo</small> - @item.Nombre</h4>                    
-                    <img src="@url" class="responsive-img" alt="@item.Nombre"/>
+                    <h4 class="rojo"><small>@item.Codigo</small> - @item.Nombre</h4>
+                    <img src="@url" class="responsive-img" alt="@item.Nombre" />
                 </div>
                 @*<div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>*@
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>*@
             </div>
         }
     </div>
@@ -40,9 +40,8 @@
 
 <div class="center-align">
     @Html.PagedListPager(Model, page => Url.Action("Products",
-                                new { page }))
+                                    new { page }))
 </div>
-
 
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script>
