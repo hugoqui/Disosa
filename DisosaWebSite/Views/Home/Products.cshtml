@@ -1,14 +1,14 @@
 ﻿@model PagedList.IPagedList<DisosaWebSite.Models.ProductoCatalogo>
 @using PagedList.Mvc;
 
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
 
 <main class="container">
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col s12 m3">
-                <div class="card center-align">
+                <div class="card center-align bubble">
                     <span class="card-title " style="font-size:12px; font-weight:bold">@item.Codigo</span>
                     <div class="card-image">
                         @{ var url = "http://pictures.disosagt.com/productos/" + item.Codigo + ".jpg";}

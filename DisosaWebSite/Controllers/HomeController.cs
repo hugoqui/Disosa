@@ -32,20 +32,7 @@ namespace DisosaWebSite.Controllers
 
         public ActionResult Products(string search, int? page)
         {
-            if (search != null) { page = 1; }
-            // cuando haya algo, que muestre la pagina 1
-            //var productos = db.Productos.ToList();
-            //if (!String.IsNullOrEmpty(search))
-            //{
-            //    productos = productos.Where(p => p.Nombre.Contains(search)).ToList();
-            //}
-            //productos = productos.OrderBy(p => p.Codigo).ToList();
-            //int pageSize = 12;
-            //int pageNumber = (page ?? 1);
-            //return View(productos.ToPagedList(pageNumber, pageSize));
-
-            HttpWebRequest request =
-                (HttpWebRequest)WebRequest.Create("http://admin.disosagt.com/api/Catalogo");//
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://admin.disosagt.com/api/Catalogo");//
             request.Method = "Get";
             request.KeepAlive = true;
             request.Accept = "application/json";
@@ -57,8 +44,13 @@ namespace DisosaWebSite.Controllers
                 myResponse = sr.ReadToEnd();
             }
 
+            if (search != null) { page = 1; }
             List<ProductoCatalogo> productos = JsonConvert.DeserializeObject<List<ProductoCatalogo>>(myResponse);
-            
+            if (!String.IsNullOrEmpty(search))
+            {
+                productos = productos.Where(p => p.Nombre.Contains(search)).ToList();
+            }
+            productos = productos.OrderBy(p => p.Codigo).ToList();
             int pageSize = 12;
             int pageNumber = (page ?? 1);
             return View(productos.ToPagedList(pageNumber, pageSize));
