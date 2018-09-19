@@ -121,6 +121,24 @@
     <Content Include="Content\images\slider1.jpg" />
     <Content Include="Content\images\slider2.jpg" />
     <Content Include="Content\images\slider3.jpg" />
+    <Content Include="Content\images\team\1.jpeg" />
+    <Content Include="Content\images\team\10.jpeg" />
+    <Content Include="Content\images\team\11.jpeg" />
+    <Content Include="Content\images\team\12.jpeg" />
+    <Content Include="Content\images\team\13.jpeg" />
+    <Content Include="Content\images\team\14.jpeg" />
+    <Content Include="Content\images\team\15.jpeg" />
+    <Content Include="Content\images\team\16.jpeg" />
+    <Content Include="Content\images\team\17.jpeg" />
+    <Content Include="Content\images\team\18.jpeg" />
+    <Content Include="Content\images\team\2.jpeg" />
+    <Content Include="Content\images\team\3.jpeg" />
+    <Content Include="Content\images\team\4.jpeg" />
+    <Content Include="Content\images\team\5.jpeg" />
+    <Content Include="Content\images\team\6.jpeg" />
+    <Content Include="Content\images\team\7.jpeg" />
+    <Content Include="Content\images\team\8.jpeg" />
+    <Content Include="Content\images\team\9.jpeg" />
     <Content Include="Content\images\visitas.png" />
     <Content Include="Content\images\voleibol1.jpg" />
     <Content Include="Content\images\voleibol22.jpg" />
@@ -199,6 +217,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\Team.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

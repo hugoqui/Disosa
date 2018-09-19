@@ -1,0 +1,28 @@
+﻿@model DisosaWebSite.Models.Empleado
+@{
+    ViewData["Title"] = "Nuestro Equipo";
+}
+
+
+<style>
+    .foto {
+        border: solid 8px #000;
+        box-shadow: 0px 0px 20px #808080;
+    }
+</style>
+
+<div class="container center-align bubble" style="margin-bottom:100px">
+    <h4>Empleado</h4>
+    <hr />
+    <h3 class="indigo-text"><strong>@Model.Nombre</strong></h3>
+    <h5 class="rojo darken-3">@Model.Puesto</h5>
+    <br />
+    <img class="responsive-img foto hideme" src="@Model.Imagen" alt="@Model.Imagen" style="max-width:300px" />
+
+    <h6 class="green-text"><strong>Empleado Activo de Distribución Horizontal</strong></h6>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    $("#pacifier").fadeOut();
+</script>
